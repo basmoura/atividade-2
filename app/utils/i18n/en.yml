@@ -1,0 +1,101 @@
+app:
+  title: Activity II - Data Analysis
+
+nav:
+  radio:
+    label: "Please select"
+  lang: Language
+
+lang:
+  en: 🇺🇸 English
+  pt-BR: 🇧🇷 Português
+
+activity:
+  title: "## Explanatory Analysis of the Dataset used in Activity 01"
+  description: |
+    *During Activity 01 you presented insights and explorations about the dataset, so how about now presenting the reasons why these occurred?*
+
+    *This time, the challenge is to **EXPLAIN** the reasons behind three insights presented, based on data and figures with annotation plots. It is a more detailed analysis, adding explanations to the exploration.*
+
+dataset:
+  content: |
+    ## Dataset Information
+
+    The dataset used in this project was collected through a survey conducted via **Google Forms** with university students in Malaysia. The aim of the survey was to analyze the students' current academic situation and the impacts related to mental health.
+
+    The information covers students of different **ages, genders, courses, and years of study**, including those who do or do not have any type of mental disorder, such as **depression, anxiety, or panic attacks**. In addition, the dataset provides information about **sleep quality, stress levels, academic engagement, weekly study workload**, and details on the **support available during episodes of mental disorders**, such as specialized counseling.
+
+    *Source: [https://www.kaggle.com/datasets/junnn0126/university-students-mental-health](https://www.kaggle.com/datasets/junnn0126/university-students-mental-health)*
+
+    ### Dataset Structure
+
+    The dataset consists of **16 columns**, distributed as follows:
+
+    - **11 columns of type `int64`**
+    - **1 column of type `float64`**
+    - **4 columns of type `string`**
+
+    Regarding data quality, the dataset **does not contain null values**, but it does have some **invalid, duplicated, or blank records**.
+
+    ### Need for Data Cleaning
+
+    To enable more consistent analyses, some inconsistencies need to be corrected:
+
+    - **Year of Study:** there are multiple ways of representing the same information, such as *“Year 3”* and *“year 3”*.
+
+    - **Courses:** some appear abbreviated, incorrectly suggesting they are distinct courses. For example, the course *“Engineering”* also appears as *“Engine”* and *“Engin”*.
+
+    These adjustments are essential to ensure **standardization** and the **reliability** of subsequent analyses.
+
+insight_one:
+  title: "Impact of Weekly Study Hours on Student Performance"
+  summary: |
+    The chart shows a **direct relationship between weekly study load and academic performance**. Among students who dedicate **few study hours**, there is a higher concentration in **lower grade ranges**, indicating that **limited study time can compromise performance** in the courses.
+
+    As we move toward an **intermediate number of study hours**, the distribution of grades becomes more varied. Although there is still a **significant portion of students performing around the average**, cases start to emerge that stand out **both upwards and downwards**.
+
+    This suggests that **increasing study hours does not guarantee good performance on its own**, but broadens the possibility of **differentiated results** depending on **study quality**, **personal organization**, and individual factors such as **motivation** and **study habits**.
+  tab:
+    title: "P1. Explanatory Analysis Insight #1"
+  chart:
+    title: "Study Hours × Academic Performance"
+    hover_template: "Weekly Study Hours: %{x}<br>CGPA: %{y}"
+    xaxis_title: "Weekly Study Hours"
+    yaxis_title: "CGPA"
+
+insight_two:
+  tab:
+    title: "P2. Explanatory Analysis Insight #2"
+  title: "Students with Mental Disorders by Course"
+  summary: |
+    The chart shows that courses in the **STEM field concentrate the highest proportion of students reporting some type of mental disorder**. Among them, the **Engineering** course stands out significantly, with **235 records**, followed by the **Bachelor in Computer Science** (**143**) and the **Bachelor in Information Technology** (**92**). These numbers confirm the trend already described in the academic literature, such as in the article [“Mental health in undergraduate engineering students” (Mirabelli et al., *Journal of Engineering Education*)](https://onlinelibrary.wiley.com/doi/full/10.1002/jee.20551), which highlights high levels of psychological distress among engineering students, as well as significant barriers to seeking help. One of the main conclusions of this study is that the academic culture in Engineering tends to **normalize stress and overload**, treating them as a natural part of professional training. This contributes to symptoms of anxiety, depression, or exhaustion often going unrecognized or untreated.
+
+    This concentration in STEM courses may be associated with **typical characteristics of these programs**, such as heavier course loads, high content complexity, and long study hours. These factors act as potential triggers for anxiety, depression, and panic attacks, which are the disorders most frequently reported in the dataset. Academic intensity, combined with performance pressure, amplifies the vulnerability of these students.
+
+    On the other hand, courses in the **humanities and religious studies** also report mental disorders, albeit in smaller proportions. Notable cases include **Islamic Knowledge and Human Sciences** (**39 cases**), **Islamic Education** (**37**), **Law** (**27**), **Biomedical Sciences** (**26**), **Psychology** (**26**), and **Islamic Jurisprudence** (**17**). Although these numbers indicate lower incidence, they do not mean the absence of psychological challenges. What can be observed is that the **nature of academic activities in these courses—more qualitative and reflective—may exert less cognitive pressure and reduce the intensity of continuous study hours**, acting as a mitigating factor.
+  chart:
+    title: "Number of Students with Mental Disorders by Course"
+    hover_template: "Number of Students: %{x}<br>Course: %{y}"
+    xaxis_title: "Number of Students"
+    yaxis_title: "Course"
+
+insight_three:
+  title: "Average Academic Engagement by Year of Study"
+  summary: |
+    The analysis of the selected courses reveals that academic engagement over the years does not follow a linear trajectory of growth or decline. Instead, there are fluctuations that suggest the influence of factors specific to each stage, such as curriculum changes, class characteristics, or even the complexity of the content offered at each period.
+
+    In the **1st year**, the **Bachelor in Information Technology** shows the highest average engagement (**3.33**), possibly driven by the initial enthusiasm of students facing introductory content and engaging with technology-related topics. In contrast, the **Engineering** course records the lowest performance (**2.85**), which may reflect both the difficulty of adapting to foundational subjects and the demanding workload already present at the beginning of the program.
+
+    In the **2nd year**, there is a significant improvement in the **Engineering** course, with an increase of approximately **12%** compared to the first year (**from 2.85 to 3.19**). This progress may be associated with a process of adaptation by students, who begin to handle course demands more effectively, in addition to being introduced to more specific engineering subjects. Meanwhile, the **Bachelor in Information Technology** maintains a high average (**3.30**), while **Computer Science** shows a slight increase (**3.17** compared to 3.16 in the 1st year).
+
+    In the **3rd year**, the **Bachelor in Information Technology** reaches a remarkable engagement peak (**3.57**), clearly surpassing the other courses. This increase may be related to the moment when students begin to experience practical projects and more applied content, strengthening the connection between theory and practice. On the other hand, the **Computer Science** course shows a sharp decline (**2.77**), suggesting potential difficulties due to the complexity of intermediate subjects. **Engineering** maintains moderate growth (**3.12**).
+
+    In the **4th year**, an interesting inversion occurs: **Engineering** takes the lead with an average engagement of **3.28**, suggesting that students reach greater academic maturity and motivation as they approach graduation. In the same period, **Computer Science** again records the lowest result (**2.77**), which may indicate challenges related to the high complexity of advanced subjects and the growing pressure of the job market. The **Bachelor in Information Technology** does not have records for the 4th year in the dataset analyzed, making direct comparisons at this stage impossible.
+  tab:
+    title: "P3. Explanatory Analysis Insight #3"
+  chart:
+    title: "Academic Engagement: Average by Year in Technology Courses"
+    hover_template: "Year of Study: %{x}<br>Average Academic Engagement: %{y:.2f}"
+    xaxis_title: "Year of Study"
+    yaxis_title: "Average Academic Engagement"
+    legend_title_text: "Course"
