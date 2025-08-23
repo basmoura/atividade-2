@@ -7,7 +7,7 @@ def study_hours_per_week_cgpa(df):
         x="StudyHoursPerWeek",
         y="CGPA",
         color="CGPA",
-        color_continuous_scale=px.colors.cyclical.IceFire,
+        color_continuous_scale=px.colors.sequential.RdBu,
         size="CGPA",
         height=800,
         title="Horas de Estudo × Desempenho Acadêmico",
