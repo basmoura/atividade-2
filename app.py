@@ -53,11 +53,12 @@ def main():
 
     st.header("Insights", divider="gray")
 
-    tab1, tab2, tab3 = st.tabs(
+    tab1, tab2, tab3, tab4 = st.tabs(
         [
             "P1. Análise Explanatória Insight #1",
             "P2. Análise Explanatória Insight #2",
             "P3. Análise Explanatória Insight #3",
+            "P4. Análise Explanatória Insight #4",
         ]
     )
 
